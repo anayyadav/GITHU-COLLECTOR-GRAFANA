@@ -2,12 +2,11 @@ FROM ubuntu:latest
 RUN apt-get update && apt-get -y install cron 
 RUN apt-get -y install python3
 RUN apt install -y python-pip
-#RUN pip install prometheus_client
 WORKDIR /githubexporter
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
-copy github-cron /etc/cron.d/github-cron
+COPY github-cron /etc/cron.d/github-cron
 COPY . /githubexporter
 
 ENV ACCESS_TOKEN

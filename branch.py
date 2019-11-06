@@ -7,7 +7,7 @@ def getBranchage(access_token,repourl,branchname):
 	header = {'Content-Type': 'application/json', 'Authorization': 'Bearer {0}'.format(access_token)}
 	response = requests.get(api_url, headers=header)
 	if response.status_code == 200:
-		branch= response.json()
+		branch= response.json() #
 	else:
 		print ("calculating the age of a branch for repositories",repourl,", return status code = ", response.status_code)
 		branch=[]

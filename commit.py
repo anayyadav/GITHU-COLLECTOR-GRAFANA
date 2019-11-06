@@ -4,6 +4,7 @@ import datetime
 
 def getCommits(access_token,repourl):
 	today = int(datetime.datetime.today().weekday())
+	#test
 	api_url = repourl+"/stats/punch_card"
 	header = {'Content-Type': 'application/json', 'Authorization': 'Bearer {0}'.format(access_token)}
 	response = requests.get(api_url, headers=header)
